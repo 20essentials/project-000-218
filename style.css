@@ -1,0 +1,142 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+  -webkit-tap-highlight-color: transparent;
+}
+
+html{
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: white transparent;
+}
+
+body {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  background-color: #000;
+  background-image: url('assets/texture.jpg');
+  background-size: 20vw 20vw;
+  
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/texture.jpg');
+    background-color: #0f04;
+    background-size: 20vw 20vw;
+    animation: bgAnimation 2s linear infinite alternate;
+  }
+}
+
+.container {
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  perspective: 10000px;
+  position: relative;
+  left: 7vw;
+  top: 4vw;
+  transform: rotate(-45deg) rotateX(-50deg)  rotateY(25deg);
+
+  @media (width <= 1111px) {
+    zoom: .6;
+    left: 25vmin;
+  }
+
+  &:hover {
+    .block .rectangle-5 {
+      opacity: .8;
+      filter: contrast(50%);
+    }
+  }
+  
+
+  .block {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    perspective: 10000px;
+
+
+    .rectangle {
+      width: 100%;
+      height: 40px;
+      position: absolute;
+      transform-style: preserve-3d;
+      perspective: 10000px;
+
+      .side {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: url('assets/obsidian.webp');
+        background-size: 50px;
+
+        &:nth-child(1) {
+          transform: rotateX(0deg);
+        }
+        &:nth-child(2) {
+          transform: rotateX(0deg) translateZ(-40px);
+        }
+
+        &:nth-child(3) {
+          transform-origin: 50% 0;
+          transform: rotateX(-90deg);
+        }
+
+        &:nth-child(4) {
+          transform-origin: 50% 100%;
+          transform: rotateX(90deg);
+        }
+      }
+    }
+
+    .rectangle-2 {
+      transform: translateZ(-160px)
+    }
+
+    .rectangle-3 {
+      transform-origin: 100% 0%;
+      transform: rotateY(-90deg);
+    }
+    .rectangle-4 {
+      transform-origin: 0% 0%;
+      transform: rotateY(90deg)
+
+    }
+
+    .rectangle-5 {
+      width: 94%;
+      height: 54%;
+      position: absolute;
+      left: -18px;
+      top: -157px;
+      transform-origin: 50% 100%;
+      transform: rotateX(90deg);
+      background-color: #fff8;
+      background-image: url('assets/portalgif.gif');
+      transition: opacity 1s, filter 1s;
+      background-size: 25px;
+    }
+  }
+
+}
+
+@keyframes bgAnimation {
+  0% {
+    background-blend-mode: multiply;
+  }
+  100% {
+    background-blend-mode: overlay;
+  }
+}

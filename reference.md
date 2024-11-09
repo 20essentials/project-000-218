@@ -1,0 +1,4 @@
+- **Reference ⬇️**
+  - [Texture Repeat](https://www.vecteezy.com/vector-art/46739946-pixel-green-background-symbolizing-foliage)
+  - [Nether Portal Gif](https://www.reddit.com/r/Minecraft/comments/13idfgt/nether_portal_gif_i_got_it_from_the_game_files/)
+  - [Compress Gif](https://ezgif.com/optimize)
